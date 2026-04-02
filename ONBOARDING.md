@@ -1,16 +1,16 @@
-# Onboarding Guide — Populism and Narratives
-**Wyss Academy for Nature**
+# Onboarding Guide — [YOUR_PROJECT_NAME]
+**[YOUR_INSTITUTION]**
 
 > About **20 minutes**. Claude does most of the work for you.
-> Before starting, make sure you have received the **Dropbox folder** invite and **GitHub repository** access.
+> Before starting, make sure you have received access to the **shared data folder** (Dropbox or similar) and the **GitHub repository**.
 
 ---
 
-## Step 1 — Sync Dropbox
+## Step 1 — Sync the Shared Data Folder
 
-Accept the Dropbox invite and make sure the folder syncs to your computer.
+Accept the invite to the shared data folder and make sure it syncs to your computer.
 
-> **Windows:** Open Dropbox → find `populism_and_narratives` → right-click → **Make available offline**
+> **Windows:** Open Dropbox → find `[your_project]` → right-click → **Make available offline**
 > **Mac:** Same — right-click the folder → **Make available offline**
 
 Wait until the sync is fully complete (the green checkmark appears on the folder icon).
@@ -19,13 +19,13 @@ Wait until the sync is fully complete (the green checkmark appears on the folder
 
 ## Step 2 — Install Git
 
-Git is required for version control. Check if it is already installed by opening a terminal and running:
+Git is required for version control. Check if it is already installed:
 
 ```
 git --version
 ```
 
-- **If you see a version number** (e.g. `git version 2.43.0`): you are good, skip to Step 3.
+- **If you see a version number** (e.g. `git version 2.43.0`): skip to Step 3.
 - **If you get an error**: download and install Git from https://git-scm.com/downloads
   - Windows: run the installer with all defaults. Make sure **"Git from the command line and also from 3rd-party software"** is selected.
   - Mac: install via Homebrew (`brew install git`) or accept the prompt when Xcode command line tools are offered.
@@ -47,7 +47,7 @@ Open it and sign in with your Anthropic account.
 
 1. Download **GitHub Desktop**: https://desktop.github.com → install with defaults
 2. Sign in with your GitHub account
-3. **File → Clone repository** → find `Populism-and-Narratives` → click **Clone**
+3. **File → Clone repository** → find `[YOUR_REPO_NAME]` → click **Clone**
 
 Note the folder path shown at the bottom (you will need it in Step 6).
 
@@ -55,43 +55,41 @@ Note the folder path shown at the bottom (you will need it in Step 6).
 
 ## Step 5 — Open the project in Claude Code
 
-Open Claude Code → **File → Open Folder** → select the `Populism-and-Narratives` folder you just cloned.
+Open Claude Code → **File → Open Folder** → select the project folder you just cloned.
 
 ---
 
 ## Step 6 — Let Claude set everything up
 
-Paste the prompt below into Claude Code. **Before hitting Enter**, fill in the three bracketed fields at the top with your own information:
+Paste the prompt below into Claude Code. **Before hitting Enter**, fill in the bracketed fields at the top with your own information:
 
 ```
-I am a new collaborator on the Populism and Narratives project. Here is my machine:
+I am a new collaborator on [YOUR_PROJECT_NAME]. Here is my machine:
 - OS: [Windows / Mac]
-- My Dropbox data folder: [e.g. C:\Users\YourName\Dropbox\populism_and_narratives\data]
-- Stata version and location: [e.g. Stata 17 at C:\Program Files\Stata17]
+- My local data folder path: [e.g. C:\Users\YourName\Dropbox\your_project\data]
+- Stata version and location (if applicable): [e.g. Stata 17 at C:\Program Files\Stata17]
 
 Please set up my environment completely. Do all of the following:
 
 1. Read CLAUDE.md to understand the project structure and conventions.
 
 2. Create code/py/config_local.py from code/py/config_local.py.template.
-   Set DATA_ROOT to my Dropbox data path above.
+   Set DATA_ROOT to my data folder path above.
 
 3. Create code/stata/config_local.do from code/stata/config_local.do.template.
-   Set $data_root to my Dropbox data path, and $root to the current repo folder.
+   Set $data_root to my data folder path, and $root to the current repo folder.
 
 4. Check if Python is installed (run: python --version).
    If Python is NOT installed, tell me to download Python 3.13 from
    https://www.python.org/downloads — tick "Add Python to PATH" during install —
    then come back and paste this prompt again.
-   If Python IS installed, run these three commands:
+   If Python IS installed, run:
    pip install -r requirements.txt
-   pip install pdfplumber
-   python -m spacy download en_core_web_sm
 
 5. On Windows: check if 'python3' works in the terminal. If not, create a copy
    or alias so that 'python3' points to 'python' (the project hooks use python3).
 
-6. Add Stata to my system PATH so I can run 'stata' from the terminal.
+6. If Stata is used: add Stata to my system PATH so I can run 'stata' from the terminal.
    On Windows with PowerShell: first run "$PROFILE | Format-List -Force" to find
    the correct profile path before modifying it.
 
@@ -102,12 +100,12 @@ Please set up my environment completely. Do all of the following:
 8. Install the Compound Engineering plugin (enables /commit and other commands):
    claude plugin marketplace add EveryInc/compound-engineering-plugin
 
-9. Create .claude/state/personal-memory.md with my OS, paths, and Stata version.
+9. Create .claude/state/personal-memory.md with my OS, paths, and software versions.
 
 10. Verify everything:
-    - cd into code/py/ and run: python -c "import config; print(config.DATA_RAW)"
-    - Confirm the path points to my Dropbox rawdata folder
-    - Run: stata -e version (check Stata is on PATH)
+    - Run: python -c "import sys; sys.path.insert(0, 'code/py'); import config; print(config.DATA_RAW)"
+    - Confirm the path points to my local data folder
+    - If Stata is used, run: stata -e version
     - Report any errors.
 ```
 
@@ -131,11 +129,11 @@ You never need to type git commands. Use these prompts in Claude Code:
 |---|---|
 | Start working on something new | `Pull the latest from main and create a branch called [yourname/description].` |
 | Save and share your work | `/commit` |
-| Run a Stata do-file | `Run code/stata/1-analysis_main_tweets.do and show me any errors from the log.` |
-| Run a Python script | `Run code/py/01_data_prep.py and tell me if it completes successfully.` |
+| Run a Stata do-file | `Run code/stata/your_script.do and show me any errors from the log.` |
+| Run a Python script | `Run code/py/your_script.py and tell me if it completes successfully.` |
 | Fix an error | `I got this error: [paste error]. Fix it.` |
 | See what changed | `Show me what I changed since the last commit.` |
-| Review code before committing | `/review-stata code/stata/1-analysis_main_tweets.do` |
+| Review code before committing | `/review-stata code/stata/your_script.do` |
 
 ---
 

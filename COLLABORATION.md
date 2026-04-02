@@ -1,8 +1,8 @@
-# Collaboration Guide — Populism and Narratives
+# Collaboration Guide — [YOUR_PROJECT_NAME]
 
-**Team:** Andrea Mentasti & Raffaella Intinghero
-**Repo:** https://github.com/raffaellaintinghero/Populism-and-Narratives
-**Last updated:** 2026-03-17
+**Team:** [Collaborator 1] & [Collaborator 2]
+**Repo:** [YOUR_GITHUB_REPO_URL]
+**Last updated:** [YYYY-MM-DD]
 
 ---
 
@@ -10,8 +10,8 @@
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/raffaellaintinghero/Populism-and-Narratives.git
-   cd Populism-and-Narratives
+   git clone [YOUR_GITHUB_REPO_URL]
+   cd [YOUR_REPO_FOLDER]
    ```
 
 2. Create your local config files (gitignored — never committed):
@@ -19,7 +19,7 @@
    cp code/py/config_local.py.template code/py/config_local.py
    cp code/stata/config_local.do.template code/stata/config_local.do
    ```
-   Edit each file and set the path to your local Dropbox `data/` folder.
+   Edit each file and set the path to your local data folder.
 
 3. Install Python dependencies:
    ```bash
@@ -29,13 +29,10 @@
 4. Set your git identity (once per machine):
    ```bash
    git config --global user.name "Your Name"
-   git config --global user.email "your.email@wyssacademy.org"
+   git config --global user.email "your.email@institution.org"
    ```
 
-5. Verify everything works:
-   ```bash
-   python code/py/01_data_prep.py
-   ```
+5. Verify everything works — run your project's first script and confirm no errors.
 
 See **SETUP.md** for full details (Stata on PATH, PDF tools, Claude Code plugin).
 
@@ -78,10 +75,10 @@ git push origin --delete yourname/short-description-of-work  # delete from GitHu
 Use your name as a prefix so it's always clear who owns the branch:
 
 ```
-andrea/openai-stage3-fix
-andrea/visibrain-cleanup
-raffaella/stata-event-study
-raffaella/politician-analysis
+alice/feature-description
+alice/bugfix-description
+bob/analysis-update
+bob/data-cleaning
 ```
 
 ---
@@ -114,9 +111,9 @@ raffaella/politician-analysis
 | Output figures and tables (`output/`) | `code/stata/config_local.do` |
 | Rules, skills, agents (`.claude/`) | `.env` (API keys) |
 | `MEMORY.md`, `CLAUDE.md`, `SETUP.md` | `.claude/state/` (personal memory) |
-| `quality_reports/`, `templates/` | All data in Dropbox (`data/rawdata/`, `data/processed/`) |
+| `quality_reports/`, `templates/` | All data in shared storage (`data/rawdata/`, `data/processed/`) |
 
-Data lives in Dropbox and syncs independently — it never goes through git.
+Data lives in the shared folder (Dropbox) and syncs independently — it never goes through git.
 
 ---
 

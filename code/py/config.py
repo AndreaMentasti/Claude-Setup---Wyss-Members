@@ -1,18 +1,18 @@
 """
-config.py — Project path configuration for Populism and Narratives.
+config.py — Project path configuration.
 
 Two-folder design:
   - Repo paths (code, output) are always relative to this file's location.
   - Data paths are machine-specific: set DATA_ROOT in config_local.py (gitignored).
 
-Usage in NEW scripts:
+Usage in scripts:
     import config as cfg
-    df = pd.read_csv(cfg.DATA_RAW / "virality/tweets/all_main_data_with_location_info.csv")
+    df = pd.read_csv(cfg.DATA_RAW / "your_dataset.csv")
     fig.savefig(cfg.FIGURES / "fig_name.png", dpi=300, bbox_inches='tight')
-    df.to_stata(cfg.DATA_PROCESSED / "tweets/file.dta", write_index=False)
+    df.to_stata(cfg.DATA_PROCESSED / "file.dta", write_index=False)
 
-Note: Existing scripts use config_path.change_paths() instead. Both modules
-read DATA_ROOT from config_local.py, so they resolve to the same Dropbox path.
+Note: Legacy scripts may use config_path.change_paths() instead. Both modules
+read DATA_ROOT from config_local.py, so they resolve to the same data path.
 """
 from pathlib import Path
 
@@ -35,7 +35,7 @@ EXPLORATIONS = REPO_ROOT / "explorations"
 
 # --- Data root: machine-specific via config_local.py (gitignored) ---
 # config_local.py must define:
-#   DATA_ROOT = Path(r"C:\Users\YourName\Dropbox\populism_and_narratives\data")
+#   DATA_ROOT = Path(r"C:\Users\YourName\Dropbox\your_project\data")
 # Falls back to repo-relative data/ if config_local.py is absent.
 try:
     from config_local import DATA_ROOT  # type: ignore[import]
@@ -45,5 +45,3 @@ except ImportError:
 
 DATA_RAW       = DATA_ROOT / "rawdata"
 DATA_PROCESSED = DATA_ROOT / "processed"
-
-

@@ -1,6 +1,6 @@
 # Meta-Governance: Research Project Conventions
 
-**This repository is a collaborative research project on populism and political narratives.**
+**This repository is a template for collaborative research projects at [YOUR_INSTITUTION].**
 
 These conventions ensure consistency across collaborators and machines.
 
@@ -20,7 +20,7 @@ When creating or modifying content, ask:
 - Quality reports (plans, session logs, merge reports)
 
 **Keep local (gitignored, machine-specific):**
-- `config_local.py` / `config_local.do` (Dropbox paths)
+- `config_local.py` / `config_local.do` (data paths)
 - `.claude/settings.local.json` (personal permissions)
 - `.claude/state/` (session state)
 - API keys, `.env` files
@@ -47,12 +47,12 @@ When creating or modifying content, ask:
 
 ### .claude/state/personal-memory.md (gitignored, local only)
 
-**Purpose:** Machine-specific learnings.
+**Purpose:** Machine-specific learnings for a single collaborator.
 
 **What goes here:**
 - Machine setup: `[LEARN:setup] Stata 17 on this PC lives at C:/Program Files/Stata17/`
 - Tool quirks: `[LEARN:python] Need encoding='utf-8' on this Windows machine`
-- Local paths: `[LEARN:paths] Dropbox at C:\Users\RaffaellaIntinghero\Dropbox\`
+- Local paths: `[LEARN:paths] Dropbox at C:\Users\YourName\Dropbox\`
 
 **Review cadence:** As needed.
 
@@ -60,15 +60,10 @@ When creating or modifying content, ask:
 
 ## Cross-Machine / Cross-Collaborator Access
 
-**Collaborator A (Raffaella):**
-- Clone repo → gets MEMORY.md, all infrastructure, code, outputs
-- Creates own `config_local.py` / `config_local.do` pointing to her Dropbox
-- Builds `.claude/state/personal-memory.md` for her machine
-
-**Collaborator B (Andrea):**
-- Clone same repo → gets same shared infrastructure
-- Creates own `config_local.py` / `config_local.do` for his Dropbox path
-- Builds his own `.claude/state/personal-memory.md`
+**Each collaborator:**
+- Clones the repo → gets MEMORY.md, all infrastructure, code, outputs
+- Creates own `config_local.py` / `config_local.do` pointing to their local data folder
+- Builds `.claude/state/personal-memory.md` for their machine
 
 **Key insight:** Project knowledge syncs via git; machine-specific config stays local.
 
@@ -107,8 +102,8 @@ When creating or modifying content, ask:
 | Local settings | No | `.claude/settings.local.json` | No (gitignored) |
 | Session state | No | `.claude/state/` | No (gitignored) |
 | API keys | No | `.env` | No (gitignored) |
-| Raw data | No | Dropbox `data/rawdata/` | Shared via Dropbox |
-| Processed data | No | Dropbox `data/processed/` | Shared via Dropbox |
+| Raw data | No | `data/rawdata/` | Shared via Dropbox/cloud |
+| Processed data | No | `data/processed/` | Shared via Dropbox/cloud |
 
 ---
 
@@ -117,7 +112,7 @@ When creating or modifying content, ask:
 **When to amend this file:**
 - Collaboration workflow changes (new collaborator, new tool)
 - Memory system needs adjustment
-- Git/Dropbox boundaries shift
+- Git/shared-storage boundaries shift
 
 **Protocol:**
 1. Propose change in chat

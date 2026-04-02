@@ -6,15 +6,15 @@
  *   2. Edit config_local.do: set BOTH paths to YOUR local folders
  *   3. config_local.do is gitignored — never commit it
  *
- * This file tells Stata scripts where your repo and Dropbox data live.
+ * This file tells Stata scripts where your repo and data folder live.
  * Each collaborator creates their own version with their own paths.
  *
  * Examples:
- *   Windows: global root     "C:/Users/YourName/path/to/populism_and_narratives"
- *            global data_root "C:/Users/YourName/Dropbox/populism_and_narratives/data"
- *   macOS:   global root     "/Users/YourName/path/to/populism_and_narratives"
- *            global data_root "/Users/YourName/Dropbox/populism_and_narratives/data"
+ *   Windows: global root      "C:/Users/YourName/path/to/your_project"
+ *            global data_root "C:/Users/YourName/Dropbox/your_project/data"
+ *   macOS:   global root      "/Users/YourName/path/to/your_project"
+ *            global data_root "/Users/YourName/Dropbox/your_project/data"
  */
 
 global root      "[YOUR_REPO_PATH]"
-global data_root "[YOUR_DROPBOX_DATA_PATH]"
+global data_root "[YOUR_DATA_PATH]"

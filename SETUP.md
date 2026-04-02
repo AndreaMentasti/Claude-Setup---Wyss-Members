@@ -13,24 +13,27 @@ claude plugin install compound-engineering
 cp code/py/config_local.py.template code/py/config_local.py
 ```
 
-Edit `config_local.py` → set `DATA_ROOT` to your Dropbox `data/` path:
+Edit `config_local.py` → set `DATA_ROOT` to your local data folder path:
 
 ```python
-DATA_ROOT = Path(r"C:\Users\YourName\Dropbox\populism_and_narratives\data")
+# Windows example:
+DATA_ROOT = Path(r"C:\Users\YourName\Dropbox\your_project\data")
+
+# Mac example:
+DATA_ROOT = Path("/Users/YourName/Dropbox/your_project/data")
 ```
 
 ## 2. Stata Config
-
-Edit `global root` in your `.do` files → your local repo path.
 
 ```bash
 cp code/stata/config_local.do.template code/stata/config_local.do
 ```
 
-Edit `config_local.do` → set `global data_root` to your Dropbox `data/` path:
+Edit `config_local.do` → set both globals to your local paths:
 
 ```stata
-global data_root "C:/Users/YourName/Dropbox/populism_and_narratives/data"
+global root      "C:/Users/YourName/path/to/your_project"
+global data_root "C:/Users/YourName/Dropbox/your_project/data"
 ```
 
 ## 3. Stata on PATH
@@ -52,9 +55,9 @@ Documents is redirected to OneDrive, the profile must go there, not the default
 
 **Verify:** Close and reopen terminal, then run `stata`. Stata should launch.
 
-## 4. PDF Documentation Tools
+## 4. PDF Documentation Tools (optional — for Stata manual access)
 
-Claude reads Stata's bundled PDF manuals when writing `.do` files.
+Claude can read Stata's bundled PDF manuals when writing `.do` files.
 
 ```bash
 pip install pdfplumber
@@ -69,15 +72,15 @@ Verify: `pdftotext -v`. If missing, install poppler-utils for your OS.
 pip install -r requirements.txt
 ```
 
-## 6. Verify Pipeline
+## 6. Verify Setup
 
 ```bash
-python code/py/01_data_prep.py
+python -c "import sys; sys.path.insert(0, 'code/py'); import config; print(config.DATA_RAW)"
 ```
 
-Should complete without errors. Check that files appear in your Dropbox
-`populism_and_narratives/data/processed/` folder.
+Should print the path to your local `rawdata/` folder without errors.
 
 ## Important
 
 Neither `config_local.py` nor `config_local.do` should ever appear in `git status`.
+Both are listed in `.gitignore` — if they appear, do not commit them.
