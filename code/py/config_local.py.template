@@ -1,0 +1,17 @@
+# config_local.py — Machine-specific path configuration
+# -------------------------------------------------------
+# SETUP INSTRUCTIONS:
+#   1. Copy this file: cp config_local.py.template config_local.py
+#   2. Edit config_local.py: set DATA_ROOT to YOUR Dropbox data folder
+#   3. config_local.py is gitignored — never commit it
+#
+# This file tells Python scripts where your Dropbox data folder lives.
+# Each collaborator creates their own version with their own path.
+
+from pathlib import Path
+
+# Set this to the 'data' subfolder inside your Dropbox project folder.
+# Examples:
+#   Windows: DATA_ROOT = Path(r"C:\Users\YourName\Dropbox\populism_and_narratives\data")
+#   macOS:   DATA_ROOT = Path("/Users/YourName/Dropbox/populism_and_narratives/data")
+DATA_ROOT = Path(r"[YOUR_DROPBOX_DATA_PATH]")

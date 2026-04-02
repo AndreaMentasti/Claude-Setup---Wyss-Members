@@ -1,0 +1,20 @@
+/*
+ * config_local.do — Machine-specific path configuration
+ *
+ * SETUP INSTRUCTIONS:
+ *   1. Copy this file: copy config_local.do.template config_local.do
+ *   2. Edit config_local.do: set BOTH paths to YOUR local folders
+ *   3. config_local.do is gitignored — never commit it
+ *
+ * This file tells Stata scripts where your repo and Dropbox data live.
+ * Each collaborator creates their own version with their own paths.
+ *
+ * Examples:
+ *   Windows: global root     "C:/Users/YourName/path/to/populism_and_narratives"
+ *            global data_root "C:/Users/YourName/Dropbox/populism_and_narratives/data"
+ *   macOS:   global root     "/Users/YourName/path/to/populism_and_narratives"
+ *            global data_root "/Users/YourName/Dropbox/populism_and_narratives/data"
+ */
+
+global root      "[YOUR_REPO_PATH]"
+global data_root "[YOUR_DROPBOX_DATA_PATH]"

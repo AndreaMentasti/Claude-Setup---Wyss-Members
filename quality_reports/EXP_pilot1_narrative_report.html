@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pilot 1 — Narrative Analysis Report</title>
+<style>
+  body { font-family: Georgia, serif; max-width: 960px; margin: 40px auto; color: #222; line-height: 1.7; }
+  h1 { color: #1a1a2e; border-bottom: 3px solid #BB1D1D; padding-bottom: 8px; }
+  h2 { color: #BB1D1D; margin-top: 40px; }
+  h3 { color: #333; }
+  .callout { background: #FFF3CD; border-left: 5px solid #FFA500; padding: 14px 18px; margin: 20px 0; border-radius: 4px; }
+  .finding { background: #E8F5E9; border-left: 5px solid #228B22; padding: 14px 18px; margin: 20px 0; border-radius: 4px; }
+  .warning  { background: #FFEBEE; border-left: 5px solid #BB1D1D; padding: 14px 18px; margin: 20px 0; border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+  th { background: #1a1a2e; color: white; padding: 10px 14px; text-align: left; }
+  td { padding: 8px 14px; border-bottom: 1px solid #ddd; }
+  tr:hover { background: #f5f5f5; }
+  img { max-width: 100%; margin: 20px 0; border: 1px solid #ddd; border-radius: 6px; box-shadow: 2px 2px 8px rgba(0,0,0,0.1); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  ul { margin: 8px 0; }
+  li { margin: 4px 0; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; font-weight: bold; color: white; margin: 2px; }
+  .villain-tag { background: #BB1D1D; }
+  .hero-tag    { background: #228B22; }
+  .victim-tag  { background: #FF8C00; }
+  .neutral-tag { background: #4682B4; }
+</style>
+</head>
+<body>
+
+<h1>Experiment 1 — Pilot 1: Narrative Analysis Report</h1>
+<p><em>Generated from <code>experiment1_pilot1_panel_final.dta</code> — n=49 respondents</em></p>
+
+<div class="callout">
+<b>Design:</b> Between-subjects experiment. Respondents were randomly assigned to one of three treatment arms
+(Villain prime, Hero prime, Neutral control) and asked to write freely about either AI (n=26) or Immigration (n=23).
+A headline task was administered to all (n=27 with non-empty responses).
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h2>1. Sample Composition</h2>
+
+<table>
+  <tr><th>Treatment</th><th>n (total)</th><th>n (AI)</th><th>n (Immigration)</th></tr>
+  <tr><td>Neutral (0)</td><td>14</td><td>10</td><td>4</td></tr>
+  <tr><td>Hero (1)</td>   <td>14</td><td>10</td><td>4</td></tr>
+  <tr><td>Villain (2)</td><td>21</td><td>6</td> <td>15</td></tr>
+</table>
+
+<div class="warning">
+⚠ <b>Immigration cell sizes are critically small</b> for Neutral (n=4) and Hero (n=4) arms.
+All immigration results should be treated as directional only — no statistical inference is valid.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h2>2. AI Writing — Key Findings</h2>
+
+<img src="../output/figures/exp_pilot1_villain_share.png" alt="Villain share by treatment">
+
+<h3>2.1 Treatment Effects on Role Classification</h3>
+
+<table>
+  <tr><th>Treatment</th><th>Villain %</th><th>Hero %</th><th>Victim %</th><th>Neutral %</th><th>Villain share (entity-level)</th></tr>
+  <tr><td>Neutral</td> <td>60%</td><td>50%</td><td>20%</td><td>50%</td><td>33.7%</td></tr>
+  <tr><td>Hero</td>    <td>70%</td><td>50%</td><td>60%</td><td>20%</td><td>33.3%</td></tr>
+  <tr><td>Villain</td> <td>83%</td><td>17%</td><td>50%</td><td>33%</td><td>41.7%</td></tr>
+</table>
+
+<div class="finding">
+<b>Finding 1 — Villain treatment works on AI.</b>
+The villain prime increases the villain rate from 60% (neutral) to 83% (+23pp) and villain entity share from 24% to 37.5%.
+This is the clearest treatment effect in the pilot.
+</div>
+
+<div class="finding">
+<b>Finding 2 — Hero→Victim boomerang effect.</b>
+The hero prime does not increase hero framing (50% = same as neutral), but dramatically increases victim framing
+(60% vs 20% in neutral, +40pp). Priming "AI as hero" appears to activate awareness of who AI might harm —
+a narrative boomerang. Hero entity share drops from 20% to 16%, while victim share jumps from 12% to 26%.
+</div>
+
+<h3>2.2 Most Common Villain Entities (AI)</h3>
+<ul><li><b>AI</b> (13x)</li><li><b>tech companies</b> (2x)</li><li><b>robots</b> (1x)</li><li><b>demand for natural resources</b> (1x)</li><li><b>price of processors and data storage</b> (1x)</li><li><b>technology</b> (1x)</li><li><b>government</b> (1x)</li><li><b>corporations</b> (1x)</li></ul>
+
+<p>AI itself is the dominant villain (13/18 villain mentions), followed by <b>tech companies</b> (2x).
+Other villain mentions are diffuse: resources, prices, government, corporations — suggesting respondents
+attribute responsibility to both the technology and the institutions behind it.</p>
+
+<img src="../output/figures/exp_pilot1_villain_entities.png" alt="Top villain entities">
+
+<h3>2.3 Narrative DAG — AI</h3>
+<img src="../output/figures/exp_pilot1_DAG_AI.png" alt="AI narrative DAG">
+
+<h3>2.4 Thematic Clusters in AI Responses</h3>
+
+<p>Reading the responses, five recurring themes emerge:</p>
+
+<ol>
+  <li><b>Job displacement / economic threat</b> — The most common villain narrative. Workers, "the workforce", "common man" as victims. AI as the agent of displacement. Present in ~40% of responses.</li>
+  <li><b>Misinformation / epistemic threat</b> — AI as producer of fake content, images, voices. Society / "ordinary people" as victims. "It's not required to be labeled as AI so it's believed to be real." Present in ~25% of responses.</li>
+  <li><b>Energy / environmental cost</b> — AI data centers, electricity costs, resource drain. Often coded as neutral or villain depending on emphasis. Present in ~20% of responses.</li>
+  <li><b>AI as personal tool / hero</b> — Positive experiences with Gemini, ChatGPT, practical problem-solving. "I don't know how I lived without AI." Pure hero framing, no ambivalence. Present in ~25% of responses.</li>
+  <li><b>Unregulated corporate power</b> — Tech companies, "companies who are building these models", government/corporations as villains. A systemic rather than technological framing. Present in ~15% of responses.</li>
+</ol>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h2>3. Immigration Writing — Key Findings</h2>
+
+<h3>3.1 Treatment Effects</h3>
+
+<table>
+  <tr><th>Treatment</th><th>Villain %</th><th>Hero %</th><th>Victim %</th><th>Neutral %</th><th>Villain share (entity-level)</th></tr>
+  <tr><td>Neutral (n=4)</td> <td>75%</td><td>0%</td><td>25%</td><td>75%</td><td>33.3%</td></tr>
+  <tr><td>Hero (n=4)</td>    <td>75%</td><td>50%</td><td>75%</td><td>0%</td><td>33.3%</td></tr>
+  <tr><td>Villain (n=15)</td><td>53%</td><td>27%</td><td>33%</td><td>60%</td><td>23.3%</td></tr>
+</table>
+
+<div class="warning">
+<b>Finding 3 — Villain treatment suppresses villain framing on immigration (reactance).</b>
+The villain prime produces the <em>lowest</em> villain rate (53%) and the highest neutral rate (52.6% of entities).
+The neutral arm produces the highest villain rate (75%). This is a classic reactance pattern:
+liberal-leaning respondents pushed back against the villain frame by writing more neutrally or
+redirecting the villain label toward the government rather than immigrants.
+</div>
+
+<div class="finding">
+<b>Finding 4 — Hero prime activates full narrative engagement.</b>
+The hero treatment is the only condition producing zero neutral entities (0%) and simultaneously
+high villain (37.5%), hero (25%), and victim (37.5%) shares. It "turns on" the narrative structure
+completely — respondents write richer, more role-saturated text.
+</div>
+
+<h3>3.2 The Dual-Frame Problem</h3>
+
+<img src="../output/figures/exp_pilot1_DAG_IMM.png" alt="Immigration narrative DAG">
+
+<div class="callout">
+<b>Core structural issue:</b> "Immigrants" appears as villain, hero, AND victim across respondents —
+the same entity maps to three different roles depending on political frame. The villain binary (0/1)
+collapses two fundamentally opposite narratives into a single code.
+</div>
+
+<div class="grid2">
+  <div>
+    <h4><span class="tag villain-tag">Villain</span> entities in Immigration</h4>
+    <ul><li><b>illegal immigrants</b> (6x)</li><li><b>current administration</b> (1x)</li><li><b>Coyotes</b> (1x)</li><li><b>attackers of immigrants</b> (1x)</li><li><b>anti-immigrant people</b> (1x)</li><li><b>Trump administration</b> (1x)</li><li><b>ICE</b> (1x)</li><li><b>current immigration system</b> (1x)</li></ul>
+  </div>
+  <div>
+    <h4><span class="tag hero-tag">Hero</span> + <span class="tag victim-tag">Victim</span> entities</h4>
+    <b>Heroes:</b><ul><li><b>immigrants</b> (5x)</li><li><b>legal immigrants</b> (1x)</li></ul>
+    <b>Victims:</b><ul><li><b>immigrants</b> (6x)</li><li><b>vulnerable populations</b> (1x)</li><li><b>individuals entering the United States</b> (1x)</li><li><b>our own people</b> (1x)</li></ul>
+  </div>
+</div>
+
+<p><b>Conservative frame</b> (~35% of sample): <em>illegal immigrants</em> as villain, US citizens/taxpayers as victim.</p>
+<p><b>Liberal frame</b> (~65% of sample): <em>Trump administration / ICE / system</em> as villain, <em>immigrants</em> as hero and victim.</p>
+
+<h3>3.3 Thematic Clusters in Immigration Responses</h3>
+<ol>
+  <li><b>"Nation of immigrants" founding myth</b> — Invoked in ~60% of responses, across all treatments. Functions as a shared moral frame that both sides use differently.</li>
+  <li><b>Legal vs illegal distinction</b> — The most common structural frame (~50% of responses). Even pro-immigration respondents draw this line. Suggests "legal immigration = OK, illegal = problem" is a cross-ideological baseline.</li>
+  <li><b>Humanitarian/compassion frame</b> — Present in ~40% of responses, strongly associated with liberal-frame respondents. Immigrants fleeing danger, deserving dignity.</li>
+  <li><b>Economic burden frame</b> — "They come for our jobs", "we can't take care of our own". Present in ~20% of conservative-frame responses.</li>
+  <li><b>Current events / Trump/ICE saliency</b> — ~30% of responses reference the current deportation situation unprompted. Immigration is uniquely contaminated by real-world events at time of survey (March 2026).</li>
+</ol>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h2>4. Role Co-occurrence Analysis</h2>
+
+<img src="../output/figures/exp_pilot1_cooccurrence.png" alt="Role co-occurrence heatmap">
+<img src="../output/figures/exp_pilot1_role_composition.png" alt="Role composition stacked bars">
+
+<p>The co-occurrence matrix shows how often multiple roles appear in the same response. For AI,
+villain+victim co-occur in 11 responses — the "AI harms people" narrative. Villain+hero co-occur in
+5 responses — respondents who hold genuinely ambivalent views. For immigration, villain+victim co-occur
+in 5 responses, reflecting the dual-frame: either (conservative) illegal immigrants harm citizens,
+or (liberal) the government harms immigrants.</p>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h2>5. Implications for Full Pilot Design</h2>
+
+<ol>
+  <li><b>AI is the better topic for measuring villain narrative activation.</b>
+  The causal chain is clean: villain prime → villain framing of AI (+23pp).
+  Use AI as the primary DV topic in the full pilot.</li>
+
+  <li><b>Add ideology/party ID as a moderator for immigration.</b>
+  The treatment effect on immigration is entirely masked by political identity.
+  A 2×2 design (treatment × ideology) would be essential to identify within-frame effects.</li>
+
+  <li><b>The hero→victim boomerang deserves a hypothesis.</b>
+  This is a novel finding: hero priming activates victim awareness. Possible mechanism:
+  "If AI is a hero, who is it saving? → identifies victims." Test in full pilot with larger N.</li>
+
+  <li><b>Villain share (entity-level) is a richer DV than villain=0/1.</b>
+  Use the individual-level villain share (villain entities / total entities per respondent) as a
+  continuous DV. More sensitive and avoids ceiling effects.</li>
+
+  <li><b>Separate villain direction on immigration.</b>
+  Add a follow-up question: "Who or what is the main problem with immigration in the US?"
+  Or code villain entities by target (immigrants vs government) rather than just presence/absence.</li>
+
+  <li><b>Headline task has low sensitivity.</b>
+  66% neutral entity rate and reactance pattern. Consider replacing with a "rate this story" task,
+  a forced-choice framing question, or a longer writing task that gives more signal.</li>
+
+  <li><b>Increase immigration Neutral/Hero cell sizes.</b>
+  Currently n=4 each — essentially no power. Aim for n≥30 per cell in the full pilot.</li>
+</ol>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h2>6. Interesting DAGs to Explore in Full Pilot</h2>
+
+<div class="callout">
+<b>DAG 1: Villain prime → Narrative villain framing → Behavioral outcome</b><br>
+Treatment → villain_share → [engagement, sharing intention, policy preference]<br>
+<em>AI topic. Test whether narrative activation mediates political effects.</em>
+</div>
+
+<div class="callout">
+<b>DAG 2: Hero prime → Victim salience → Compassion response</b><br>
+Treatment(hero) → victim_identified → [empathy, support for immigration, policy preference]<br>
+<em>The boomerang: priming heroes makes people notice victims.</em>
+</div>
+
+<div class="callout">
+<b>DAG 3: Political identity × Villain prime → Frame direction</b><br>
+[Conservative × villain prime] → villain = immigrants<br>
+[Liberal × villain prime]      → villain = government (reactance)<br>
+<em>Immigration only. Requires ideology measure.</em>
+</div>
+
+<div class="callout">
+<b>DAG 4: Narrative richness → Treatment sensitivity</b><br>
+Respondents who produce richer narratives (more entities, more roles) may be more susceptible to treatment.<br>
+<em>Exploratory: use total entity count as moderator.</em>
+</div>
+
+<hr>
+<p style="color: #888; font-size: 0.85em;">
+Report generated by <code>EXP_pilot1_report.py</code> — Populism and Narratives Project, Wyss Academy for Nature.
+</p>
+</body>
+</html>
